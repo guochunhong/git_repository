@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0c65f80e02ab4adc9f1ea7bea91a8936" Name="Diagram1">
+        <EntityTypeShape EntityType="GnexModel.TB_Area" Width="1.5" PointX="0.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Dyestuff_Validation" Width="1.5" PointX="7.5" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Equipment" Width="1.5" PointX="5.25" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Experiment" Width="1.5" PointX="10.5" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Experiment_Info" Width="1.5" PointX="18.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Experiment_Result" Width="1.5" PointX="18.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Experiment_Summary" Width="1.5" PointX="8.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Fluorescence" Width="1.5" PointX="12.75" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Gene_Locus" Width="1.5" PointX="16.5" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Gene_Locus_Result_Relation" Width="1.5" PointX="21.75" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Gene_Result" Width="1.5" PointX="16.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Gene_Type" Width="1.5" PointX="19.5" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Hospital" Width="1.5" PointX="3" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Login_Log" Width="1.5" PointX="7.5" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_OpEnvironment" Width="1.5" PointX="13.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_OpEnvironment_Run_Log" Width="1.5" PointX="15.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_OpEnvironment_Temperature" Width="1.5" PointX="15.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Patient" Width="1.5" PointX="12.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Sample_Gene" Width="1.5" PointX="16.5" PointY="33" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_System_Param" Width="1.5" PointX="11.25" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_Uploaded_Log" Width="1.5" PointX="8.25" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GnexModel.TB_USER" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <AssociationConnector Association="GnexModel.fk_Area_id" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FKTB_Dyestuff_Validation_Equipment_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.fk_hospital_id" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Experiment_Equipment_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.fk_TB_Login_Log_equipment_id" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.fk_TB_OpEnvironment_Equipment_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Experiment_Experiment_Summary_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Experiment_File_Path_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Experiment_Info_Experiment_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Experiment_Openvironment_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Experiment_Result_Experiment_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.fk_TB_Fluorescence_Experiment_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.fk_TB_Patient_Experiment_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Experiment_Info_Gene_Locus_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Experiment_Info_Sample_Gene_Result_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Experiment_Info_Sample_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Experiment_Result_Gene_Result_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.fk_TB_Gene_Locus_Type_Relation_Locus_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Sample_Gene_Gene_Locus_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Gene_Locus_Result_Relation_Gene_Result_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.fk_TB_Gene_Locus_Type_Relation_Type_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.FK_TB_Sample_Gene_Gene_Result_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.fk_TB_Patient_Hospital_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.fk_TB_Login_Log_user_id" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.fk_TB_OpEnvironment_Param_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.fk_TB_OpEnvironment_Run_Log_OpEnvironment_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="GnexModel.fk_TB_OpEnvironment_Temperature_OpEnvironment_ID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

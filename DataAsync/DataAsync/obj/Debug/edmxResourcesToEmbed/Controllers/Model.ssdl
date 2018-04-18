@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GnexModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TB_Experiment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Experiment_Summary_ID" Type="int" />
+    <Property Name="Equipment_ID" Type="int" />
+    <Property Name="Openvironment_ID" Type="int" />
+    <Property Name="Exper_Person" Type="varchar" MaxLength="100" />
+    <Property Name="Exper_Time" Type="datetime" />
+    <Property Name="Exper_Type" Type="int" />
+    <Property Name="File_Path_ID" Type="bigint" />
+    <Property Name="Is_Effective" Type="bit" Nullable="false" />
+    <Property Name="Run_Time" Type="datetime" />
+    <Property Name="Add_Time" Type="datetime" />
+    <Property Name="Update_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_Uploaded_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="File_Name" Type="nvarchar" MaxLength="360" />
+    <Property Name="Equipment_Code" Type="nvarchar" MaxLength="8" />
+    <Property Name="Created_Time" Type="datetime" Nullable="false" />
+    <Property Name="Updated_Time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_TB_Experiment_File_Path_ID">
+    <End Role="TB_Uploaded_Log" Type="Self.TB_Uploaded_Log" Multiplicity="0..1" />
+    <End Role="TB_Experiment" Type="Self.TB_Experiment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Uploaded_Log">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment">
+        <PropertyRef Name="File_Path_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GnexModelStoreContainer">
+    <EntitySet Name="TB_Experiment" EntityType="Self.TB_Experiment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Uploaded_Log" EntityType="Self.TB_Uploaded_Log" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TB_Experiment_File_Path_ID" Association="Self.FK_TB_Experiment_File_Path_ID">
+      <End Role="TB_Uploaded_Log" EntitySet="TB_Uploaded_Log" />
+      <End Role="TB_Experiment" EntitySet="TB_Experiment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

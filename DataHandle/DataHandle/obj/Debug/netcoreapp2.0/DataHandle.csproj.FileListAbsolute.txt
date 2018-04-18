@@ -1,0 +1,11 @@
+C:\Users\Jojo\Desktop\DataHandle\DataHandle\bin\Debug\netcoreapp2.0\DataHandle.deps.json
+C:\Users\Jojo\Desktop\DataHandle\DataHandle\bin\Debug\netcoreapp2.0\DataHandle.runtimeconfig.json
+C:\Users\Jojo\Desktop\DataHandle\DataHandle\bin\Debug\netcoreapp2.0\DataHandle.runtimeconfig.dev.json
+C:\Users\Jojo\Desktop\DataHandle\DataHandle\bin\Debug\netcoreapp2.0\DataHandle.dll
+C:\Users\Jojo\Desktop\DataHandle\DataHandle\bin\Debug\netcoreapp2.0\DataHandle.pdb
+C:\Users\Jojo\Desktop\DataHandle\DataHandle\obj\Debug\netcoreapp2.0\DataHandle.csprojResolveAssemblyReference.cache
+C:\Users\Jojo\Desktop\DataHandle\DataHandle\obj\Debug\netcoreapp2.0\DataHandle.csproj.CoreCompileInputs.cache
+C:\Users\Jojo\Desktop\DataHandle\DataHandle\obj\Debug\netcoreapp2.0\DataHandle.AssemblyInfoInputs.cache
+C:\Users\Jojo\Desktop\DataHandle\DataHandle\obj\Debug\netcoreapp2.0\DataHandle.AssemblyInfo.cs
+C:\Users\Jojo\Desktop\DataHandle\DataHandle\obj\Debug\netcoreapp2.0\DataHandle.dll
+C:\Users\Jojo\Desktop\DataHandle\DataHandle\obj\Debug\netcoreapp2.0\DataHandle.pdb
