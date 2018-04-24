@@ -1,0 +1,14 @@
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\bin\Debug\netcoreapp2.0\AspNetCoreFileUploadFileTable.deps.json
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\bin\Debug\netcoreapp2.0\AspNetCoreFileUploadFileTable.runtimeconfig.json
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\bin\Debug\netcoreapp2.0\AspNetCoreFileUploadFileTable.runtimeconfig.dev.json
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\bin\Debug\netcoreapp2.0\AspNetCoreFileUploadFileTable.dll
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\bin\Debug\netcoreapp2.0\AspNetCoreFileUploadFileTable.pdb
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\bin\Debug\netcoreapp2.0\DataAccess.dll
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\bin\Debug\netcoreapp2.0\DataAccess.pdb
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\obj\Debug\netcoreapp2.0\AspNetCoreFileUploadFileTable.csprojResolveAssemblyReference.cache
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\obj\Debug\netcoreapp2.0\AspNetCoreFileUploadFileTable.csproj.CoreCompileInputs.cache
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\obj\Debug\netcoreapp2.0\AspNetCoreFileUploadFileTable.AssemblyInfoInputs.cache
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\obj\Debug\netcoreapp2.0\AspNetCoreFileUploadFileTable.AssemblyInfo.cs
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\obj\Debug\netcoreapp2.0\AspNetCoreFileUploadFileTable.csproj.CopyComplete
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\obj\Debug\netcoreapp2.0\AspNetCoreFileUploadFileTable.dll
+G:\AspNetCoreFileUploadFileTable-master\src\AspNetCoreFileUploadFileTable\obj\Debug\netcoreapp2.0\AspNetCoreFileUploadFileTable.pdb

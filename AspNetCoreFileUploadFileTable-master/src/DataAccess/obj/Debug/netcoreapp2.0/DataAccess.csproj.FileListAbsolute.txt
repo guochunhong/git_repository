@@ -1,0 +1,8 @@
+G:\AspNetCoreFileUploadFileTable-master\src\DataAccess\bin\Debug\netcoreapp2.0\DataAccess.deps.json
+G:\AspNetCoreFileUploadFileTable-master\src\DataAccess\bin\Debug\netcoreapp2.0\DataAccess.dll
+G:\AspNetCoreFileUploadFileTable-master\src\DataAccess\bin\Debug\netcoreapp2.0\DataAccess.pdb
+G:\AspNetCoreFileUploadFileTable-master\src\DataAccess\obj\Debug\netcoreapp2.0\DataAccess.csproj.CoreCompileInputs.cache
+G:\AspNetCoreFileUploadFileTable-master\src\DataAccess\obj\Debug\netcoreapp2.0\DataAccess.AssemblyInfoInputs.cache
+G:\AspNetCoreFileUploadFileTable-master\src\DataAccess\obj\Debug\netcoreapp2.0\DataAccess.AssemblyInfo.cs
+G:\AspNetCoreFileUploadFileTable-master\src\DataAccess\obj\Debug\netcoreapp2.0\DataAccess.dll
+G:\AspNetCoreFileUploadFileTable-master\src\DataAccess\obj\Debug\netcoreapp2.0\DataAccess.pdb
