@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GnexModelStoreContainer" CdmEntityContainer="GnexEntities">
+    <EntitySetMapping Name="TB_Uploaded_Log">
+      <EntityTypeMapping TypeName="GnexModel.TB_Uploaded_Log">
+        <MappingFragment StoreEntitySet="TB_Uploaded_Log">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="File_Name" ColumnName="File_Name" />
+          <ScalarProperty Name="Equipment_Code" ColumnName="Equipment_Code" />
+          <ScalarProperty Name="Created_Time" ColumnName="Created_Time" />
+          <ScalarProperty Name="Updated_Time" ColumnName="Updated_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Experiment">
+      <EntityTypeMapping TypeName="GnexModel.TB_Experiment">
+        <MappingFragment StoreEntitySet="TB_Experiment">
+          <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+          <ScalarProperty Name="Run_Time" ColumnName="Run_Time" />
+          <ScalarProperty Name="Is_Effective" ColumnName="Is_Effective" />
+          <ScalarProperty Name="File_Path_ID" ColumnName="File_Path_ID" />
+          <ScalarProperty Name="Exper_Type" ColumnName="Exper_Type" />
+          <ScalarProperty Name="Exper_Time" ColumnName="Exper_Time" />
+          <ScalarProperty Name="Exper_Person" ColumnName="Exper_Person" />
+          <ScalarProperty Name="Openvironment_ID" ColumnName="Openvironment_ID" />
+          <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
+          <ScalarProperty Name="Experiment_Summary_ID" ColumnName="Experiment_Summary_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

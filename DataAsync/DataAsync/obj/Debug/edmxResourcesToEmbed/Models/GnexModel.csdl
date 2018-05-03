@@ -1,0 +1,945 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GnexModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TB_Area">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Province_ID" Type="Int32" />
+    <Property Name="Province_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="City_ID" Type="Int32" />
+    <Property Name="City_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="District_ID" Type="Int32" />
+    <Property Name="District_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Level" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Tel_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Zip_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Pin_Yin" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="English" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Longitude" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="Latitude" Type="Decimal" Precision="10" Scale="6" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Hospital" Relationship="Self.FK_TB_Hospital_Area_id" FromRole="TB_Area" ToRole="TB_Hospital" />
+  </EntityType>
+  <EntityType Name="TB_Dyestuff_Validation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dye_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Equipment_ID" Type="Int32" />
+    <Property Name="Gr_Channel" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="Slot_1" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Slot_2" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Slot_3" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Slot_4" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Slot_5" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Slot_6" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Slot_7" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Slot_8" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Slot_9" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Slot_10" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Slot_11" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Slot_12" Type="Decimal" Precision="18" Scale="8" />
+    <Property Name="Is_Effective" Type="Boolean" Nullable="false" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Equipment" Relationship="Self.FK_TB_Dyestuff_Validation_Equipment_ID" FromRole="TB_Dyestuff_Validation" ToRole="TB_Equipment" />
+  </EntityType>
+  <EntityType Name="TB_Equipment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Machine_ID" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Machine_Code" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Hospital_ID" Type="Int32" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Time" Type="DateTime" Precision="3" />
+    <Property Name="Is_Effective" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TB_Dyestuff_Validation" Relationship="Self.FK_TB_Dyestuff_Validation_Equipment_ID" FromRole="TB_Equipment" ToRole="TB_Dyestuff_Validation" />
+    <NavigationProperty Name="TB_Hospital" Relationship="Self.FK_TB_Equipment_Hospital_id" FromRole="TB_Equipment" ToRole="TB_Hospital" />
+    <NavigationProperty Name="TB_Login_Log" Relationship="Self.FK_TB_Login_Log_equipment_id" FromRole="TB_Equipment" ToRole="TB_Login_Log" />
+    <NavigationProperty Name="TB_OpEnvironment" Relationship="Self.FK_TB_OpEnvironment_Equipment_ID" FromRole="TB_Equipment" ToRole="TB_OpEnvironment" />
+    <NavigationProperty Name="TB_Experiment" Relationship="GnexModel.FK_TB_Experiment_Equipment_ID" FromRole="TB_Equipment" ToRole="TB_Experiment" />
+  </EntityType>
+  <EntityType Name="TB_Experiment_Info">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Experiment_ID" Type="Int32" />
+    <Property Name="Slot" Type="Int32" />
+    <Property Name="Gene_Locus_ID" Type="Int32" />
+    <Property Name="Sample_ID" Type="Int32" />
+    <Property Name="Sample_Category" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Is_Sop" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Is_Immediately" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Save_Days" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Save_Condition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Formula_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Formula_Person" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Freeze_Times" Type="Int32" />
+    <Property Name="Other_Condition" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Wipe_Paper_Save_Hours" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DNA_Concentration" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Time" Type="DateTime" Precision="3" />
+    <Property Name="Sample_Gene_Result_ID" Type="Int32" />
+    <Property Name="Is_Effective" Type="Boolean" />
+    <NavigationProperty Name="TB_Gene_Locus" Relationship="Self.FK_TB_Experiment_Info_Gene_Locus_ID" FromRole="TB_Experiment_Info" ToRole="TB_Gene_Locus" />
+    <NavigationProperty Name="TB_Gene_Result" Relationship="Self.FK_TB_Experiment_Info_Sample_Gene_Result_ID" FromRole="TB_Experiment_Info" ToRole="TB_Gene_Result" />
+    <NavigationProperty Name="TB_Sample_Gene" Relationship="Self.FK_TB_Experiment_Info_Sample_ID" FromRole="TB_Experiment_Info" ToRole="TB_Sample_Gene" />
+    <NavigationProperty Name="TB_Experiment" Relationship="GnexModel.FK_TB_Experiment_Info_Experiment_ID" FromRole="TB_Experiment_Info" ToRole="TB_Experiment" />
+  </EntityType>
+  <EntityType Name="TB_Experiment_Model">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Model_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Parent_ID" Type="Int32" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <Property Name="Is_Effective" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TB_Experiment_Model1" Relationship="Self.FK_TB_Experiment_Model_Parent_ID" FromRole="TB_Experiment_Model" ToRole="TB_Experiment_Model1" />
+    <NavigationProperty Name="TB_Experiment_Model2" Relationship="Self.FK_TB_Experiment_Model_Parent_ID" FromRole="TB_Experiment_Model1" ToRole="TB_Experiment_Model" />
+    <NavigationProperty Name="TB_Experiment_Summary" Relationship="Self.FK_TB_Experiment_Summary_Model_ID" FromRole="TB_Experiment_Model" ToRole="TB_Experiment_Summary" />
+  </EntityType>
+  <EntityType Name="TB_Experiment_Result">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Experiment_ID" Type="Int32" />
+    <Property Name="Slot" Type="Int32" />
+    <Property Name="G_R2" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_R2" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="G_Curve_Growth_Multiple" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="G_Growth_Cycles_Numbers" Type="Int32" />
+    <Property Name="G_MinFl" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="G_Re2_Rl2" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="G_Rl2" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="G_R22" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="G_Afi" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="G_CT" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="G_EPF" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="G_SPF" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_Curve_Growth_Multiple" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_Growth_Cycles_Numbers" Type="Int32" />
+    <Property Name="R_MinFl" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_Re2_Rl2" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_Rl2" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_R22" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_Afi" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_CT" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_EPF" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_SPF" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="GR_Ratio" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Real_GR_Ratio" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="G_EPF_SPF" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_EPF_SPF" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_Ct_Range" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="G_Ct_Range" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <Property Name="G_Ct_NoLim" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_Ct_NoLim" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Gene_Result_ID" Type="Int32" />
+    <NavigationProperty Name="TB_Gene_Result" Relationship="Self.FK_TB_Experiment_Result_Gene_Result_ID" FromRole="TB_Experiment_Result" ToRole="TB_Gene_Result" />
+    <NavigationProperty Name="TB_Experiment" Relationship="GnexModel.FK_TB_Experiment_Result_Experiment_ID" FromRole="TB_Experiment_Result" ToRole="TB_Experiment" />
+  </EntityType>
+  <EntityType Name="TB_Experiment_Summary">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OA_No" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Exper_Summary_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Report_File_Path" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Model_ID" Type="Int32" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <Property Name="Is_Effective" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TB_Experiment_Model" Relationship="Self.FK_TB_Experiment_Summary_Model_ID" FromRole="TB_Experiment_Summary" ToRole="TB_Experiment_Model" />
+    <NavigationProperty Name="TB_Experiment" Relationship="GnexModel.FK_TB_Experiment_Experiment_Summary_ID" FromRole="TB_Experiment_Summary" ToRole="TB_Experiment" />
+  </EntityType>
+  <EntityType Name="TB_Fluorescence">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Experiment_ID" Type="Int32" />
+    <Property Name="Slot" Type="Int32" />
+    <Property Name="G_Inital_Fluorescence" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_Inital_Fluorescence" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="G_Standard_Fluorescence" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="R_Standard_Fluorescence" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Cycle_No" Type="Int32" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Experiment" Relationship="GnexModel.FK_TB_Fluorescence_Experiment_ID" FromRole="TB_Fluorescence" ToRole="TB_Experiment" />
+  </EntityType>
+  <EntityType Name="TB_Gene_Locus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gene_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Locus_ID_In_Software" Type="Int32" />
+    <Property Name="Is_Effective" Type="Boolean" Nullable="false" />
+    <Property Name="Add_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="TB_Experiment_Info" Relationship="Self.FK_TB_Experiment_Info_Gene_Locus_ID" FromRole="TB_Gene_Locus" ToRole="TB_Experiment_Info" />
+    <NavigationProperty Name="TB_Gene_Locus_Result_Relation" Relationship="Self.FK_TB_Gene_Locus_Type_Relation_Locus_ID" FromRole="TB_Gene_Locus" ToRole="TB_Gene_Locus_Result_Relation" />
+    <NavigationProperty Name="TB_Sample_Gene" Relationship="Self.FK_TB_Sample_Gene_Gene_Locus_ID" FromRole="TB_Gene_Locus" ToRole="TB_Sample_Gene" />
+  </EntityType>
+  <EntityType Name="TB_Gene_Locus_Result_Relation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gene_Locus_ID" Type="Int32" Nullable="false" />
+    <Property Name="Gene_Result_ID" Type="Int32" />
+    <Property Name="Gene_Type_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TB_Gene_Locus" Relationship="Self.FK_TB_Gene_Locus_Type_Relation_Locus_ID" FromRole="TB_Gene_Locus_Result_Relation" ToRole="TB_Gene_Locus" />
+    <NavigationProperty Name="TB_Gene_Result" Relationship="Self.FK_TB_Gene_Locus_Result_Relation_Gene_Result_ID" FromRole="TB_Gene_Locus_Result_Relation" ToRole="TB_Gene_Result" />
+    <NavigationProperty Name="TB_Gene_Type" Relationship="Self.FK_TB_Gene_Locus_Type_Relation_Type_ID" FromRole="TB_Gene_Locus_Result_Relation" ToRole="TB_Gene_Type" />
+  </EntityType>
+  <EntityType Name="TB_Gene_Result">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gene_Result_Short_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gene_Result_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Experiment_Info" Relationship="Self.FK_TB_Experiment_Info_Sample_Gene_Result_ID" FromRole="TB_Gene_Result" ToRole="TB_Experiment_Info" />
+    <NavigationProperty Name="TB_Experiment_Result" Relationship="Self.FK_TB_Experiment_Result_Gene_Result_ID" FromRole="TB_Gene_Result" ToRole="TB_Experiment_Result" />
+    <NavigationProperty Name="TB_Gene_Locus_Result_Relation" Relationship="Self.FK_TB_Gene_Locus_Result_Relation_Gene_Result_ID" FromRole="TB_Gene_Result" ToRole="TB_Gene_Locus_Result_Relation" />
+    <NavigationProperty Name="TB_Sample_Gene" Relationship="Self.FK_TB_Sample_Gene_Gene_Result_ID" FromRole="TB_Gene_Result" ToRole="TB_Sample_Gene" />
+  </EntityType>
+  <EntityType Name="TB_Gene_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gene_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Gene_Locus_Result_Relation" Relationship="Self.FK_TB_Gene_Locus_Type_Relation_Type_ID" FromRole="TB_Gene_Type" ToRole="TB_Gene_Locus_Result_Relation" />
+  </EntityType>
+  <EntityType Name="TB_Hospital">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Area_ID" Type="Int32" />
+    <Property Name="Hospital_Name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Hospital_Addr" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Hospital_Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Area" Relationship="Self.FK_TB_Hospital_Area_id" FromRole="TB_Hospital" ToRole="TB_Area" />
+    <NavigationProperty Name="TB_Equipment" Relationship="Self.FK_TB_Equipment_Hospital_id" FromRole="TB_Hospital" ToRole="TB_Equipment" />
+    <NavigationProperty Name="TB_Patient" Relationship="Self.FK_TB_Patient_Hospital_ID" FromRole="TB_Hospital" ToRole="TB_Patient" />
+  </EntityType>
+  <EntityType Name="TB_Login_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_ID" Type="Int32" />
+    <Property Name="Login_PWD" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Equipment_ID" Type="Int32" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <Property Name="Is_Effective" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TB_Equipment" Relationship="Self.FK_TB_Login_Log_equipment_id" FromRole="TB_Login_Log" ToRole="TB_Equipment" />
+    <NavigationProperty Name="TB_USER" Relationship="Self.FK_TB_Login_Log_user_id" FromRole="TB_Login_Log" ToRole="TB_USER" />
+  </EntityType>
+  <EntityType Name="TB_OpEnvironment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Equipment_ID" Type="Int32" />
+    <Property Name="Experiment_ID" Type="Int32" />
+    <Property Name="Run_Time" Type="DateTime" Precision="3" />
+    <Property Name="Total_Run_Time_Of_Sec" Type="Int32" />
+    <Property Name="Run_Number" Type="Int32" />
+    <Property Name="Number_Of_Cycles" Type="Int32" />
+    <Property Name="Initial_Denaturation_Temp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Initial_Denaturation_Time_Of_Sec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Denaturation_Temp" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Denaturation_Time_Of_Sec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Annealing_Temp" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Annealing_Time_Of_Sec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Extension_Temp" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Extension_Time_Of_Sec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reverse_Transcription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Melt_Curve" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Temperature_Dots" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Slot_Count" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RT_Enabled" Type="Boolean" />
+    <Property Name="TC_Enabled" Type="Boolean" />
+    <Property Name="MC_Enabled" Type="Boolean" />
+    <Property Name="RT_EP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Run_Initialize_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Param_ID" Type="Int32" />
+    <Property Name="Rar_File_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Cut_Left" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Cut_Right" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Equipment" Relationship="Self.FK_TB_OpEnvironment_Equipment_ID" FromRole="TB_OpEnvironment" ToRole="TB_Equipment" />
+    <NavigationProperty Name="TB_System_Param" Relationship="Self.FK_TB_OpEnvironment_Param_ID" FromRole="TB_OpEnvironment" ToRole="TB_System_Param" />
+    <NavigationProperty Name="TB_OpEnvironment_Run_Log" Relationship="Self.FK_TB_OpEnvironment_Run_Log_OpEnvironment_ID" FromRole="TB_OpEnvironment" ToRole="TB_OpEnvironment_Run_Log" />
+    <NavigationProperty Name="TB_OpEnvironment_Temperature" Relationship="Self.FK_TB_OpEnvironment_Temperature_OpEnvironment_ID" FromRole="TB_OpEnvironment" ToRole="TB_OpEnvironment_Temperature" />
+    <NavigationProperty Name="TB_Experiment" Relationship="GnexModel.FK_TB_OpEnvironment_Experiment_ID" FromRole="TB_OpEnvironment" ToRole="TB_Experiment" />
+  </EntityType>
+  <EntityType Name="TB_OpEnvironment_Run_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OpEnvironment_ID" Type="Int32" />
+    <Property Name="Votage_12V" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Votage3_3V" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Votage_5V" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Votage2_8V" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Votage2_5V" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Votage1_8V" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Motor_Votage" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Small_Fan_Temp_Sensor_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Small_Fan_Temp" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Heater_Temp_Sensor_State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Heater_Temp" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Left_Slot_Temp_Sensor_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Left_Slot_Temp" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Right_Slot_Temp_Sensor_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Right_Slot_Temp" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Board_Temp_Sensor_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Board_Sensor_Temp" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Board_TM275_Temp" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Camara_Status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Votage_2_6V" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Votage_Vout" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Current_6_9" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Votage_0_V" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_OpEnvironment" Relationship="Self.FK_TB_OpEnvironment_Run_Log_OpEnvironment_ID" FromRole="TB_OpEnvironment_Run_Log" ToRole="TB_OpEnvironment" />
+  </EntityType>
+  <EntityType Name="TB_OpEnvironment_Temperature">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OpEnvironment_Id" Type="Int32" />
+    <Property Name="File_Path" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_OpEnvironment" Relationship="Self.FK_TB_OpEnvironment_Temperature_OpEnvironment_ID" FromRole="TB_OpEnvironment_Temperature" ToRole="TB_OpEnvironment" />
+  </EntityType>
+  <EntityType Name="TB_Patient">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Hospital_ID" Type="Int32" />
+    <Property Name="Experiment_ID" Type="Int32" />
+    <Property Name="Experiment_Rrsult_ID" Type="Int64" />
+    <Property Name="Patient_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Hospital_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Operator_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Patient_Birth_Day" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Patient_ID_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Patient_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Hospital_Department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Patient_Age" Type="Int32" />
+    <Property Name="Run_Time" Type="DateTime" Precision="3" />
+    <Property Name="Slot" Type="Int32" />
+    <Property Name="Gene_Locus_ID" Type="Int32" />
+    <Property Name="Inspection_Unit" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="For_Drug" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="Patient_Bar_Code" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <Property Name="Reported_Time" Type="DateTime" Precision="3" />
+    <Property Name="Remark" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TB_Hospital" Relationship="Self.FK_TB_Patient_Hospital_ID" FromRole="TB_Patient" ToRole="TB_Hospital" />
+    <NavigationProperty Name="TB_Experiment" Relationship="GnexModel.FK_TB_Patient_Experiment_ID" FromRole="TB_Patient" ToRole="TB_Experiment" />
+  </EntityType>
+  <EntityType Name="TB_Sample_Gene">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Staff_Name" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Is_Effective" Type="Boolean" Nullable="false" />
+    <Property Name="Gene_Locus_ID" Type="Int32" />
+    <Property Name="Gene_Result_ID" Type="Int32" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Experiment_Info" Relationship="Self.FK_TB_Experiment_Info_Sample_ID" FromRole="TB_Sample_Gene" ToRole="TB_Experiment_Info" />
+    <NavigationProperty Name="TB_Gene_Locus" Relationship="Self.FK_TB_Sample_Gene_Gene_Locus_ID" FromRole="TB_Sample_Gene" ToRole="TB_Gene_Locus" />
+    <NavigationProperty Name="TB_Gene_Result" Relationship="Self.FK_TB_Sample_Gene_Gene_Result_ID" FromRole="TB_Sample_Gene" ToRole="TB_Gene_Result" />
+  </EntityType>
+  <EntityType Name="TB_SSIS_Errors">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrorDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ErrorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ErrorCode" Type="Int32" />
+    <Property Name="SourceName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TB_System_Param">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Curve_Growth_Multiple" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Growth_Cycles_Numbers" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="CT_Range_Max" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="CT_Range_Min" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Minimum_Normalized_Fluorescence" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="GR_Ration_Max" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="GR_Ration_Min" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Rd" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Net_Of_Linear_Growth" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Is_Slot_Corrected" Type="Boolean" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_OpEnvironment" Relationship="Self.FK_TB_OpEnvironment_Param_ID" FromRole="TB_System_Param" ToRole="TB_OpEnvironment" />
+  </EntityType>
+  <EntityType Name="TB_Uploaded_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="File_Name" Type="String" MaxLength="360" FixedLength="false" Unicode="true" />
+    <Property Name="Equipment_Code" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Created_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="TB_Experiment" Relationship="GnexModel.FK_TB_Experiment_File_Path_ID" FromRole="TB_Uploaded_Log" ToRole="TB_Experiment" />
+  </EntityType>
+  <EntityType Name="TB_USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Nick_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Equipment_ID" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="Is_Effective" Type="Boolean" Nullable="false" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Login_Log" Relationship="Self.FK_TB_Login_Log_user_id" FromRole="TB_USER" ToRole="TB_Login_Log" />
+  </EntityType>
+  <Association Name="FK_TB_Hospital_Area_id">
+    <End Role="TB_Area" Type="Self.TB_Area" Multiplicity="0..1" />
+    <End Role="TB_Hospital" Type="Self.TB_Hospital" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Area">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Hospital">
+        <PropertyRef Name="Area_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Dyestuff_Validation_Equipment_ID">
+    <End Role="TB_Equipment" Type="Self.TB_Equipment" Multiplicity="0..1" />
+    <End Role="TB_Dyestuff_Validation" Type="Self.TB_Dyestuff_Validation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Equipment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Dyestuff_Validation">
+        <PropertyRef Name="Equipment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Equipment_Hospital_id">
+    <End Role="TB_Hospital" Type="Self.TB_Hospital" Multiplicity="0..1" />
+    <End Role="TB_Equipment" Type="Self.TB_Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Hospital">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Equipment">
+        <PropertyRef Name="Hospital_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Login_Log_equipment_id">
+    <End Role="TB_Equipment" Type="Self.TB_Equipment" Multiplicity="0..1" />
+    <End Role="TB_Login_Log" Type="Self.TB_Login_Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Equipment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Login_Log">
+        <PropertyRef Name="Equipment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_OpEnvironment_Equipment_ID">
+    <End Role="TB_Equipment" Type="Self.TB_Equipment" Multiplicity="0..1" />
+    <End Role="TB_OpEnvironment" Type="Self.TB_OpEnvironment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Equipment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_OpEnvironment">
+        <PropertyRef Name="Equipment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Experiment_Info_Gene_Locus_ID">
+    <End Role="TB_Gene_Locus" Type="Self.TB_Gene_Locus" Multiplicity="0..1" />
+    <End Role="TB_Experiment_Info" Type="Self.TB_Experiment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Gene_Locus">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment_Info">
+        <PropertyRef Name="Gene_Locus_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Experiment_Info_Sample_Gene_Result_ID">
+    <End Role="TB_Gene_Result" Type="Self.TB_Gene_Result" Multiplicity="0..1" />
+    <End Role="TB_Experiment_Info" Type="Self.TB_Experiment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Gene_Result">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment_Info">
+        <PropertyRef Name="Sample_Gene_Result_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Experiment_Info_Sample_ID">
+    <End Role="TB_Sample_Gene" Type="Self.TB_Sample_Gene" Multiplicity="0..1" />
+    <End Role="TB_Experiment_Info" Type="Self.TB_Experiment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Sample_Gene">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment_Info">
+        <PropertyRef Name="Sample_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Experiment_Model_Parent_ID">
+    <End Role="TB_Experiment_Model" Type="Self.TB_Experiment_Model" Multiplicity="0..1" />
+    <End Role="TB_Experiment_Model1" Type="Self.TB_Experiment_Model" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Experiment_Model">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment_Model1">
+        <PropertyRef Name="Parent_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Experiment_Summary_Model_ID">
+    <End Role="TB_Experiment_Model" Type="Self.TB_Experiment_Model" Multiplicity="0..1" />
+    <End Role="TB_Experiment_Summary" Type="Self.TB_Experiment_Summary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Experiment_Model">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment_Summary">
+        <PropertyRef Name="Model_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Experiment_Result_Gene_Result_ID">
+    <End Role="TB_Gene_Result" Type="Self.TB_Gene_Result" Multiplicity="0..1" />
+    <End Role="TB_Experiment_Result" Type="Self.TB_Experiment_Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Gene_Result">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment_Result">
+        <PropertyRef Name="Gene_Result_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Gene_Locus_Type_Relation_Locus_ID">
+    <End Role="TB_Gene_Locus" Type="Self.TB_Gene_Locus" Multiplicity="1" />
+    <End Role="TB_Gene_Locus_Result_Relation" Type="Self.TB_Gene_Locus_Result_Relation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Gene_Locus">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Gene_Locus_Result_Relation">
+        <PropertyRef Name="Gene_Locus_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Sample_Gene_Gene_Locus_ID">
+    <End Role="TB_Gene_Locus" Type="Self.TB_Gene_Locus" Multiplicity="0..1" />
+    <End Role="TB_Sample_Gene" Type="Self.TB_Sample_Gene" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Gene_Locus">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Sample_Gene">
+        <PropertyRef Name="Gene_Locus_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Gene_Locus_Result_Relation_Gene_Result_ID">
+    <End Role="TB_Gene_Result" Type="Self.TB_Gene_Result" Multiplicity="0..1" />
+    <End Role="TB_Gene_Locus_Result_Relation" Type="Self.TB_Gene_Locus_Result_Relation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Gene_Result">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Gene_Locus_Result_Relation">
+        <PropertyRef Name="Gene_Result_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Gene_Locus_Type_Relation_Type_ID">
+    <End Role="TB_Gene_Type" Type="Self.TB_Gene_Type" Multiplicity="1" />
+    <End Role="TB_Gene_Locus_Result_Relation" Type="Self.TB_Gene_Locus_Result_Relation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Gene_Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Gene_Locus_Result_Relation">
+        <PropertyRef Name="Gene_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Sample_Gene_Gene_Result_ID">
+    <End Role="TB_Gene_Result" Type="Self.TB_Gene_Result" Multiplicity="0..1" />
+    <End Role="TB_Sample_Gene" Type="Self.TB_Sample_Gene" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Gene_Result">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Sample_Gene">
+        <PropertyRef Name="Gene_Result_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Patient_Hospital_ID">
+    <End Role="TB_Hospital" Type="Self.TB_Hospital" Multiplicity="0..1" />
+    <End Role="TB_Patient" Type="Self.TB_Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Hospital">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Patient">
+        <PropertyRef Name="Hospital_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Login_Log_user_id">
+    <End Role="TB_USER" Type="Self.TB_USER" Multiplicity="0..1" />
+    <End Role="TB_Login_Log" Type="Self.TB_Login_Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_USER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Login_Log">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_OpEnvironment_Param_ID">
+    <End Role="TB_System_Param" Type="Self.TB_System_Param" Multiplicity="0..1" />
+    <End Role="TB_OpEnvironment" Type="Self.TB_OpEnvironment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_System_Param">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_OpEnvironment">
+        <PropertyRef Name="Param_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_OpEnvironment_Run_Log_OpEnvironment_ID">
+    <End Role="TB_OpEnvironment" Type="Self.TB_OpEnvironment" Multiplicity="0..1" />
+    <End Role="TB_OpEnvironment_Run_Log" Type="Self.TB_OpEnvironment_Run_Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_OpEnvironment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_OpEnvironment_Run_Log">
+        <PropertyRef Name="OpEnvironment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_OpEnvironment_Temperature_OpEnvironment_ID">
+    <End Role="TB_OpEnvironment" Type="Self.TB_OpEnvironment" Multiplicity="0..1" />
+    <End Role="TB_OpEnvironment_Temperature" Type="Self.TB_OpEnvironment_Temperature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_OpEnvironment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_OpEnvironment_Temperature">
+        <PropertyRef Name="OpEnvironment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GnexEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TB_Area" EntityType="Self.TB_Area" />
+    <EntitySet Name="TB_Dyestuff_Validation" EntityType="Self.TB_Dyestuff_Validation" />
+    <EntitySet Name="TB_Equipment" EntityType="Self.TB_Equipment" />
+    <EntitySet Name="TB_Experiment_Info" EntityType="Self.TB_Experiment_Info" />
+    <EntitySet Name="TB_Experiment_Model" EntityType="Self.TB_Experiment_Model" />
+    <EntitySet Name="TB_Experiment_Result" EntityType="Self.TB_Experiment_Result" />
+    <EntitySet Name="TB_Experiment_Summary" EntityType="Self.TB_Experiment_Summary" />
+    <EntitySet Name="TB_Fluorescence" EntityType="Self.TB_Fluorescence" />
+    <EntitySet Name="TB_Gene_Locus" EntityType="Self.TB_Gene_Locus" />
+    <EntitySet Name="TB_Gene_Locus_Result_Relation" EntityType="Self.TB_Gene_Locus_Result_Relation" />
+    <EntitySet Name="TB_Gene_Result" EntityType="Self.TB_Gene_Result" />
+    <EntitySet Name="TB_Gene_Type" EntityType="Self.TB_Gene_Type" />
+    <EntitySet Name="TB_Hospital" EntityType="Self.TB_Hospital" />
+    <EntitySet Name="TB_Login_Log" EntityType="Self.TB_Login_Log" />
+    <EntitySet Name="TB_OpEnvironment" EntityType="Self.TB_OpEnvironment" />
+    <EntitySet Name="TB_OpEnvironment_Run_Log" EntityType="Self.TB_OpEnvironment_Run_Log" />
+    <EntitySet Name="TB_OpEnvironment_Temperature" EntityType="Self.TB_OpEnvironment_Temperature" />
+    <EntitySet Name="TB_Patient" EntityType="Self.TB_Patient" />
+    <EntitySet Name="TB_Sample_Gene" EntityType="Self.TB_Sample_Gene" />
+    <EntitySet Name="TB_SSIS_Errors" EntityType="Self.TB_SSIS_Errors" />
+    <EntitySet Name="TB_System_Param" EntityType="Self.TB_System_Param" />
+    <EntitySet Name="TB_Uploaded_Log" EntityType="Self.TB_Uploaded_Log" />
+    <EntitySet Name="TB_USER" EntityType="Self.TB_USER" />
+    <AssociationSet Name="FK_TB_Hospital_Area_id" Association="Self.FK_TB_Hospital_Area_id">
+      <End Role="TB_Area" EntitySet="TB_Area" />
+      <End Role="TB_Hospital" EntitySet="TB_Hospital" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Dyestuff_Validation_Equipment_ID" Association="Self.FK_TB_Dyestuff_Validation_Equipment_ID">
+      <End Role="TB_Equipment" EntitySet="TB_Equipment" />
+      <End Role="TB_Dyestuff_Validation" EntitySet="TB_Dyestuff_Validation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Equipment_Hospital_id" Association="Self.FK_TB_Equipment_Hospital_id">
+      <End Role="TB_Hospital" EntitySet="TB_Hospital" />
+      <End Role="TB_Equipment" EntitySet="TB_Equipment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Login_Log_equipment_id" Association="Self.FK_TB_Login_Log_equipment_id">
+      <End Role="TB_Equipment" EntitySet="TB_Equipment" />
+      <End Role="TB_Login_Log" EntitySet="TB_Login_Log" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_OpEnvironment_Equipment_ID" Association="Self.FK_TB_OpEnvironment_Equipment_ID">
+      <End Role="TB_Equipment" EntitySet="TB_Equipment" />
+      <End Role="TB_OpEnvironment" EntitySet="TB_OpEnvironment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Experiment_Info_Gene_Locus_ID" Association="Self.FK_TB_Experiment_Info_Gene_Locus_ID">
+      <End Role="TB_Gene_Locus" EntitySet="TB_Gene_Locus" />
+      <End Role="TB_Experiment_Info" EntitySet="TB_Experiment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Experiment_Info_Sample_Gene_Result_ID" Association="Self.FK_TB_Experiment_Info_Sample_Gene_Result_ID">
+      <End Role="TB_Gene_Result" EntitySet="TB_Gene_Result" />
+      <End Role="TB_Experiment_Info" EntitySet="TB_Experiment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Experiment_Info_Sample_ID" Association="Self.FK_TB_Experiment_Info_Sample_ID">
+      <End Role="TB_Sample_Gene" EntitySet="TB_Sample_Gene" />
+      <End Role="TB_Experiment_Info" EntitySet="TB_Experiment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Experiment_Model_Parent_ID" Association="Self.FK_TB_Experiment_Model_Parent_ID">
+      <End Role="TB_Experiment_Model" EntitySet="TB_Experiment_Model" />
+      <End Role="TB_Experiment_Model1" EntitySet="TB_Experiment_Model" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Experiment_Summary_Model_ID" Association="Self.FK_TB_Experiment_Summary_Model_ID">
+      <End Role="TB_Experiment_Model" EntitySet="TB_Experiment_Model" />
+      <End Role="TB_Experiment_Summary" EntitySet="TB_Experiment_Summary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Experiment_Result_Gene_Result_ID" Association="Self.FK_TB_Experiment_Result_Gene_Result_ID">
+      <End Role="TB_Gene_Result" EntitySet="TB_Gene_Result" />
+      <End Role="TB_Experiment_Result" EntitySet="TB_Experiment_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Gene_Locus_Type_Relation_Locus_ID" Association="Self.FK_TB_Gene_Locus_Type_Relation_Locus_ID">
+      <End Role="TB_Gene_Locus" EntitySet="TB_Gene_Locus" />
+      <End Role="TB_Gene_Locus_Result_Relation" EntitySet="TB_Gene_Locus_Result_Relation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Sample_Gene_Gene_Locus_ID" Association="Self.FK_TB_Sample_Gene_Gene_Locus_ID">
+      <End Role="TB_Gene_Locus" EntitySet="TB_Gene_Locus" />
+      <End Role="TB_Sample_Gene" EntitySet="TB_Sample_Gene" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Gene_Locus_Result_Relation_Gene_Result_ID" Association="Self.FK_TB_Gene_Locus_Result_Relation_Gene_Result_ID">
+      <End Role="TB_Gene_Result" EntitySet="TB_Gene_Result" />
+      <End Role="TB_Gene_Locus_Result_Relation" EntitySet="TB_Gene_Locus_Result_Relation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Gene_Locus_Type_Relation_Type_ID" Association="Self.FK_TB_Gene_Locus_Type_Relation_Type_ID">
+      <End Role="TB_Gene_Type" EntitySet="TB_Gene_Type" />
+      <End Role="TB_Gene_Locus_Result_Relation" EntitySet="TB_Gene_Locus_Result_Relation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Sample_Gene_Gene_Result_ID" Association="Self.FK_TB_Sample_Gene_Gene_Result_ID">
+      <End Role="TB_Gene_Result" EntitySet="TB_Gene_Result" />
+      <End Role="TB_Sample_Gene" EntitySet="TB_Sample_Gene" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Patient_Hospital_ID" Association="Self.FK_TB_Patient_Hospital_ID">
+      <End Role="TB_Hospital" EntitySet="TB_Hospital" />
+      <End Role="TB_Patient" EntitySet="TB_Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Login_Log_user_id" Association="Self.FK_TB_Login_Log_user_id">
+      <End Role="TB_USER" EntitySet="TB_USER" />
+      <End Role="TB_Login_Log" EntitySet="TB_Login_Log" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_OpEnvironment_Param_ID" Association="Self.FK_TB_OpEnvironment_Param_ID">
+      <End Role="TB_System_Param" EntitySet="TB_System_Param" />
+      <End Role="TB_OpEnvironment" EntitySet="TB_OpEnvironment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_OpEnvironment_Run_Log_OpEnvironment_ID" Association="Self.FK_TB_OpEnvironment_Run_Log_OpEnvironment_ID">
+      <End Role="TB_OpEnvironment" EntitySet="TB_OpEnvironment" />
+      <End Role="TB_OpEnvironment_Run_Log" EntitySet="TB_OpEnvironment_Run_Log" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_OpEnvironment_Temperature_OpEnvironment_ID" Association="Self.FK_TB_OpEnvironment_Temperature_OpEnvironment_ID">
+      <End Role="TB_OpEnvironment" EntitySet="TB_OpEnvironment" />
+      <End Role="TB_OpEnvironment_Temperature" EntitySet="TB_OpEnvironment_Temperature" />
+    </AssociationSet>
+    <EntitySet Name="TB_Experiment" EntityType="GnexModel.TB_Experiment" />
+    <AssociationSet Name="FK_TB_Experiment_Equipment_ID" Association="GnexModel.FK_TB_Experiment_Equipment_ID">
+      <End Role="TB_Equipment" EntitySet="TB_Equipment" />
+      <End Role="TB_Experiment" EntitySet="TB_Experiment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Experiment_Experiment_Summary_ID" Association="GnexModel.FK_TB_Experiment_Experiment_Summary_ID">
+      <End Role="TB_Experiment_Summary" EntitySet="TB_Experiment_Summary" />
+      <End Role="TB_Experiment" EntitySet="TB_Experiment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Experiment_File_Path_ID" Association="GnexModel.FK_TB_Experiment_File_Path_ID">
+      <End Role="TB_Uploaded_Log" EntitySet="TB_Uploaded_Log" />
+      <End Role="TB_Experiment" EntitySet="TB_Experiment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Experiment_Info_Experiment_ID" Association="GnexModel.FK_TB_Experiment_Info_Experiment_ID">
+      <End Role="TB_Experiment" EntitySet="TB_Experiment" />
+      <End Role="TB_Experiment_Info" EntitySet="TB_Experiment_Info" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Experiment_Result_Experiment_ID" Association="GnexModel.FK_TB_Experiment_Result_Experiment_ID">
+      <End Role="TB_Experiment" EntitySet="TB_Experiment" />
+      <End Role="TB_Experiment_Result" EntitySet="TB_Experiment_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Fluorescence_Experiment_ID" Association="GnexModel.FK_TB_Fluorescence_Experiment_ID">
+      <End Role="TB_Experiment" EntitySet="TB_Experiment" />
+      <End Role="TB_Fluorescence" EntitySet="TB_Fluorescence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_OpEnvironment_Experiment_ID" Association="GnexModel.FK_TB_OpEnvironment_Experiment_ID">
+      <End Role="TB_Experiment" EntitySet="TB_Experiment" />
+      <End Role="TB_OpEnvironment" EntitySet="TB_OpEnvironment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Patient_Experiment_ID" Association="GnexModel.FK_TB_Patient_Experiment_ID">
+      <End Role="TB_Experiment" EntitySet="TB_Experiment" />
+      <End Role="TB_Patient" EntitySet="TB_Patient" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TB_Experiment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Experiment_Summary_ID" Type="Int32" />
+    <Property Name="Equipment_ID" Type="Int32" />
+    <Property Name="Exper_Person" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Exper_Type" Type="Int32" />
+    <Property Name="File_Path_ID" Type="Int64" />
+    <Property Name="Is_Effective" Type="Boolean" Nullable="false" />
+    <Property Name="Run_Time" Type="DateTime" Precision="3" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Equipment" Relationship="GnexModel.FK_TB_Experiment_Equipment_ID" FromRole="TB_Experiment" ToRole="TB_Equipment" />
+    <NavigationProperty Name="TB_Experiment_Summary" Relationship="GnexModel.FK_TB_Experiment_Experiment_Summary_ID" FromRole="TB_Experiment" ToRole="TB_Experiment_Summary" />
+    <NavigationProperty Name="TB_Uploaded_Log" Relationship="GnexModel.FK_TB_Experiment_File_Path_ID" FromRole="TB_Experiment" ToRole="TB_Uploaded_Log" />
+    <NavigationProperty Name="TB_Experiment_Info" Relationship="GnexModel.FK_TB_Experiment_Info_Experiment_ID" FromRole="TB_Experiment" ToRole="TB_Experiment_Info" />
+    <NavigationProperty Name="TB_Experiment_Result" Relationship="GnexModel.FK_TB_Experiment_Result_Experiment_ID" FromRole="TB_Experiment" ToRole="TB_Experiment_Result" />
+    <NavigationProperty Name="TB_Fluorescence" Relationship="GnexModel.FK_TB_Fluorescence_Experiment_ID" FromRole="TB_Experiment" ToRole="TB_Fluorescence" />
+    <NavigationProperty Name="TB_OpEnvironment" Relationship="GnexModel.FK_TB_OpEnvironment_Experiment_ID" FromRole="TB_Experiment" ToRole="TB_OpEnvironment" />
+    <NavigationProperty Name="TB_Patient" Relationship="GnexModel.FK_TB_Patient_Experiment_ID" FromRole="TB_Experiment" ToRole="TB_Patient" />
+  </EntityType>
+  <Association Name="FK_TB_Experiment_Equipment_ID">
+    <End Type="GnexModel.TB_Equipment" Role="TB_Equipment" Multiplicity="0..1" />
+    <End Type="GnexModel.TB_Experiment" Role="TB_Experiment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Equipment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment">
+        <PropertyRef Name="Equipment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Experiment_Experiment_Summary_ID">
+    <End Type="GnexModel.TB_Experiment_Summary" Role="TB_Experiment_Summary" Multiplicity="0..1" />
+    <End Type="GnexModel.TB_Experiment" Role="TB_Experiment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Experiment_Summary">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment">
+        <PropertyRef Name="Experiment_Summary_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Experiment_File_Path_ID">
+    <End Type="GnexModel.TB_Uploaded_Log" Role="TB_Uploaded_Log" Multiplicity="0..1" />
+    <End Type="GnexModel.TB_Experiment" Role="TB_Experiment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Uploaded_Log">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment">
+        <PropertyRef Name="File_Path_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Experiment_Info_Experiment_ID">
+    <End Type="GnexModel.TB_Experiment" Role="TB_Experiment" Multiplicity="0..1" />
+    <End Type="GnexModel.TB_Experiment_Info" Role="TB_Experiment_Info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Experiment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment_Info">
+        <PropertyRef Name="Experiment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Experiment_Result_Experiment_ID">
+    <End Type="GnexModel.TB_Experiment" Role="TB_Experiment" Multiplicity="0..1" />
+    <End Type="GnexModel.TB_Experiment_Result" Role="TB_Experiment_Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Experiment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment_Result">
+        <PropertyRef Name="Experiment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Fluorescence_Experiment_ID">
+    <End Type="GnexModel.TB_Experiment" Role="TB_Experiment" Multiplicity="0..1" />
+    <End Type="GnexModel.TB_Fluorescence" Role="TB_Fluorescence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Experiment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Fluorescence">
+        <PropertyRef Name="Experiment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_OpEnvironment_Experiment_ID">
+    <End Type="GnexModel.TB_Experiment" Role="TB_Experiment" Multiplicity="0..1" />
+    <End Type="GnexModel.TB_OpEnvironment" Role="TB_OpEnvironment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Experiment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_OpEnvironment">
+        <PropertyRef Name="Experiment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Patient_Experiment_ID">
+    <End Type="GnexModel.TB_Experiment" Role="TB_Experiment" Multiplicity="0..1" />
+    <End Type="GnexModel.TB_Patient" Role="TB_Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Experiment">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Patient">
+        <PropertyRef Name="Experiment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

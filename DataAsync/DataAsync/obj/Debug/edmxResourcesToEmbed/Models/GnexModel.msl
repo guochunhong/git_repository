@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GnexModelStoreContainer" CdmEntityContainer="GnexEntities">
+    <EntitySetMapping Name="TB_Area">
+      <EntityTypeMapping TypeName="GnexModel.TB_Area">
+        <MappingFragment StoreEntitySet="TB_Area">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Province_ID" ColumnName="Province_ID" />
+          <ScalarProperty Name="Province_Name" ColumnName="Province_Name" />
+          <ScalarProperty Name="City_ID" ColumnName="City_ID" />
+          <ScalarProperty Name="City_Name" ColumnName="City_Name" />
+          <ScalarProperty Name="District_ID" ColumnName="District_ID" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Tel_Code" ColumnName="Tel_Code" />
+          <ScalarProperty Name="Zip_Code" ColumnName="Zip_Code" />
+          <ScalarProperty Name="Pin_Yin" ColumnName="Pin_Yin" />
+          <ScalarProperty Name="English" ColumnName="English" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Dyestuff_Validation">
+      <EntityTypeMapping TypeName="GnexModel.TB_Dyestuff_Validation">
+        <MappingFragment StoreEntitySet="TB_Dyestuff_Validation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Dye_Number" ColumnName="Dye_Number" />
+          <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
+          <ScalarProperty Name="Gr_Channel" ColumnName="Gr_Channel" />
+          <ScalarProperty Name="Slot_1" ColumnName="Slot_1" />
+          <ScalarProperty Name="Slot_2" ColumnName="Slot_2" />
+          <ScalarProperty Name="Slot_3" ColumnName="Slot_3" />
+          <ScalarProperty Name="Slot_4" ColumnName="Slot_4" />
+          <ScalarProperty Name="Slot_5" ColumnName="Slot_5" />
+          <ScalarProperty Name="Slot_6" ColumnName="Slot_6" />
+          <ScalarProperty Name="Slot_7" ColumnName="Slot_7" />
+          <ScalarProperty Name="Slot_8" ColumnName="Slot_8" />
+          <ScalarProperty Name="Slot_9" ColumnName="Slot_9" />
+          <ScalarProperty Name="Slot_10" ColumnName="Slot_10" />
+          <ScalarProperty Name="Slot_11" ColumnName="Slot_11" />
+          <ScalarProperty Name="Slot_12" ColumnName="Slot_12" />
+          <ScalarProperty Name="Is_Effective" ColumnName="Is_Effective" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Equipment">
+      <EntityTypeMapping TypeName="GnexModel.TB_Equipment">
+        <MappingFragment StoreEntitySet="TB_Equipment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Machine_ID" ColumnName="Machine_ID" />
+          <ScalarProperty Name="Machine_Code" ColumnName="Machine_Code" />
+          <ScalarProperty Name="Hospital_ID" ColumnName="Hospital_ID" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+          <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+          <ScalarProperty Name="Is_Effective" ColumnName="Is_Effective" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Experiment_Info">
+      <EntityTypeMapping TypeName="GnexModel.TB_Experiment_Info">
+        <MappingFragment StoreEntitySet="TB_Experiment_Info">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Experiment_ID" ColumnName="Experiment_ID" />
+          <ScalarProperty Name="Slot" ColumnName="Slot" />
+          <ScalarProperty Name="Gene_Locus_ID" ColumnName="Gene_Locus_ID" />
+          <ScalarProperty Name="Sample_ID" ColumnName="Sample_ID" />
+          <ScalarProperty Name="Sample_Category" ColumnName="Sample_Category" />
+          <ScalarProperty Name="Is_Sop" ColumnName="Is_Sop" />
+          <ScalarProperty Name="Is_Immediately" ColumnName="Is_Immediately" />
+          <ScalarProperty Name="Save_Days" ColumnName="Save_Days" />
+          <ScalarProperty Name="Save_Condition" ColumnName="Save_Condition" />
+          <ScalarProperty Name="Formula_No" ColumnName="Formula_No" />
+          <ScalarProperty Name="Formula_Person" ColumnName="Formula_Person" />
+          <ScalarProperty Name="Freeze_Times" ColumnName="Freeze_Times" />
+          <ScalarProperty Name="Other_Condition" ColumnName="Other_Condition" />
+          <ScalarProperty Name="Wipe_Paper_Save_Hours" ColumnName="Wipe_Paper_Save_Hours" />
+          <ScalarProperty Name="DNA_Concentration" ColumnName="DNA_Concentration" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+          <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+          <ScalarProperty Name="Sample_Gene_Result_ID" ColumnName="Sample_Gene_Result_ID" />
+          <ScalarProperty Name="Is_Effective" ColumnName="Is_Effective" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Experiment_Model">
+      <EntityTypeMapping TypeName="GnexModel.TB_Experiment_Model">
+        <MappingFragment StoreEntitySet="TB_Experiment_Model">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Model_Name" ColumnName="Model_Name" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+          <ScalarProperty Name="Is_Effective" ColumnName="Is_Effective" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Experiment_Result">
+      <EntityTypeMapping TypeName="GnexModel.TB_Experiment_Result">
+        <MappingFragment StoreEntitySet="TB_Experiment_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Experiment_ID" ColumnName="Experiment_ID" />
+          <ScalarProperty Name="Slot" ColumnName="Slot" />
+          <ScalarProperty Name="G_R2" ColumnName="G_R2" />
+          <ScalarProperty Name="R_R2" ColumnName="R_R2" />
+          <ScalarProperty Name="G_Curve_Growth_Multiple" ColumnName="G_Curve_Growth_Multiple" />
+          <ScalarProperty Name="G_Growth_Cycles_Numbers" ColumnName="G_Growth_Cycles_Numbers" />
+          <ScalarProperty Name="G_MinFl" ColumnName="G_MinFl" />
+          <ScalarProperty Name="G_Re2_Rl2" ColumnName="G_Re2_Rl2" />
+          <ScalarProperty Name="G_Rl2" ColumnName="G_Rl2" />
+          <ScalarProperty Name="G_R22" ColumnName="G_R22" />
+          <ScalarProperty Name="G_Afi" ColumnName="G_Afi" />
+          <ScalarProperty Name="G_CT" ColumnName="G_CT" />
+          <ScalarProperty Name="G_EPF" ColumnName="G_EPF" />
+          <ScalarProperty Name="G_SPF" ColumnName="G_SPF" />
+          <ScalarProperty Name="R_Curve_Growth_Multiple" ColumnName="R_Curve_Growth_Multiple" />
+          <ScalarProperty Name="R_Growth_Cycles_Numbers" ColumnName="R_Growth_Cycles_Numbers" />
+          <ScalarProperty Name="R_MinFl" ColumnName="R_MinFl" />
+          <ScalarProperty Name="R_Re2_Rl2" ColumnName="R_Re2_Rl2" />
+          <ScalarProperty Name="R_Rl2" ColumnName="R_Rl2" />
+          <ScalarProperty Name="R_R22" ColumnName="R_R22" />
+          <ScalarProperty Name="R_Afi" ColumnName="R_Afi" />
+          <ScalarProperty Name="R_CT" ColumnName="R_CT" />
+          <ScalarProperty Name="R_EPF" ColumnName="R_EPF" />
+          <ScalarProperty Name="R_SPF" ColumnName="R_SPF" />
+          <ScalarProperty Name="GR_Ratio" ColumnName="GR_Ratio" />
+          <ScalarProperty Name="Real_GR_Ratio" ColumnName="Real_GR_Ratio" />
+          <ScalarProperty Name="G_EPF_SPF" ColumnName="G_EPF_SPF" />
+          <ScalarProperty Name="R_EPF_SPF" ColumnName="R_EPF_SPF" />
+          <ScalarProperty Name="R_Ct_Range" ColumnName="R_Ct_Range" />
+          <ScalarProperty Name="G_Ct_Range" ColumnName="G_Ct_Range" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+          <ScalarProperty Name="G_Ct_NoLim" ColumnName="G_Ct_NoLim" />
+          <ScalarProperty Name="R_Ct_NoLim" ColumnName="R_Ct_NoLim" />
+          <ScalarProperty Name="Gene_Result_ID" ColumnName="Gene_Result_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Experiment_Summary">
+      <EntityTypeMapping TypeName="GnexModel.TB_Experiment_Summary">
+        <MappingFragment StoreEntitySet="TB_Experiment_Summary">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OA_No" ColumnName="OA_No" />
+          <ScalarProperty Name="Exper_Summary_Name" ColumnName="Exper_Summary_Name" />
+          <ScalarProperty Name="Report_File_Path" ColumnName="Report_File_Path" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Model_ID" ColumnName="Model_ID" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+          <ScalarProperty Name="Is_Effective" ColumnName="Is_Effective" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Fluorescence">
+      <EntityTypeMapping TypeName="GnexModel.TB_Fluorescence">
+        <MappingFragment StoreEntitySet="TB_Fluorescence">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Experiment_ID" ColumnName="Experiment_ID" />
+          <ScalarProperty Name="Slot" ColumnName="Slot" />
+          <ScalarProperty Name="G_Inital_Fluorescence" ColumnName="G_Inital_Fluorescence" />
+          <ScalarProperty Name="R_Inital_Fluorescence" ColumnName="R_Inital_Fluorescence" />
+          <ScalarProperty Name="G_Standard_Fluorescence" ColumnName="G_Standard_Fluorescence" />
+          <ScalarProperty Name="R_Standard_Fluorescence" ColumnName="R_Standard_Fluorescence" />
+          <ScalarProperty Name="Cycle_No" ColumnName="Cycle_No" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Gene_Locus">
+      <EntityTypeMapping TypeName="GnexModel.TB_Gene_Locus">
+        <MappingFragment StoreEntitySet="TB_Gene_Locus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gene_Name" ColumnName="Gene_Name" />
+          <ScalarProperty Name="Locus_ID_In_Software" ColumnName="Locus_ID_In_Software" />
+          <ScalarProperty Name="Is_Effective" ColumnName="Is_Effective" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+          <ScalarProperty Name="Updated_Time" ColumnName="Updated_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Gene_Locus_Result_Relation">
+      <EntityTypeMapping TypeName="GnexModel.TB_Gene_Locus_Result_Relation">
+        <MappingFragment StoreEntitySet="TB_Gene_Locus_Result_Relation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gene_Locus_ID" ColumnName="Gene_Locus_ID" />
+          <ScalarProperty Name="Gene_Result_ID" ColumnName="Gene_Result_ID" />
+          <ScalarProperty Name="Gene_Type_ID" ColumnName="Gene_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Gene_Result">
+      <EntityTypeMapping TypeName="GnexModel.TB_Gene_Result">
+        <MappingFragment StoreEntitySet="TB_Gene_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gene_Result_Short_Name" ColumnName="Gene_Result_Short_Name" />
+          <ScalarProperty Name="Gene_Result_Description" ColumnName="Gene_Result_Description" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Gene_Type">
+      <EntityTypeMapping TypeName="GnexModel.TB_Gene_Type">
+        <MappingFragment StoreEntitySet="TB_Gene_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Gene_Type" ColumnName="Gene_Type" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Hospital">
+      <EntityTypeMapping TypeName="GnexModel.TB_Hospital">
+        <MappingFragment StoreEntitySet="TB_Hospital">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Area_ID" ColumnName="Area_ID" />
+          <ScalarProperty Name="Hospital_Name" ColumnName="Hospital_Name" />
+          <ScalarProperty Name="Hospital_Addr" ColumnName="Hospital_Addr" />
+          <ScalarProperty Name="Hospital_Tel" ColumnName="Hospital_Tel" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Login_Log">
+      <EntityTypeMapping TypeName="GnexModel.TB_Login_Log">
+        <MappingFragment StoreEntitySet="TB_Login_Log">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Login_PWD" ColumnName="Login_PWD" />
+          <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+          <ScalarProperty Name="Is_Effective" ColumnName="Is_Effective" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_OpEnvironment">
+      <EntityTypeMapping TypeName="GnexModel.TB_OpEnvironment">
+        <MappingFragment StoreEntitySet="TB_OpEnvironment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
+          <ScalarProperty Name="Experiment_ID" ColumnName="Experiment_ID" />
+          <ScalarProperty Name="Run_Time" ColumnName="Run_Time" />
+          <ScalarProperty Name="Total_Run_Time_Of_Sec" ColumnName="Total_Run_Time_Of_Sec" />
+          <ScalarProperty Name="Run_Number" ColumnName="Run_Number" />
+          <ScalarProperty Name="Number_Of_Cycles" ColumnName="Number_Of_Cycles" />
+          <ScalarProperty Name="Initial_Denaturation_Temp" ColumnName="Initial_Denaturation_Temp" />
+          <ScalarProperty Name="Initial_Denaturation_Time_Of_Sec" ColumnName="Initial_Denaturation_Time_Of_Sec" />
+          <ScalarProperty Name="Denaturation_Temp" ColumnName="Denaturation_Temp" />
+          <ScalarProperty Name="Denaturation_Time_Of_Sec" ColumnName="Denaturation_Time_Of_Sec" />
+          <ScalarProperty Name="Annealing_Temp" ColumnName="Annealing_Temp" />
+          <ScalarProperty Name="Annealing_Time_Of_Sec" ColumnName="Annealing_Time_Of_Sec" />
+          <ScalarProperty Name="Extension_Temp" ColumnName="Extension_Temp" />
+          <ScalarProperty Name="Extension_Time_Of_Sec" ColumnName="Extension_Time_Of_Sec" />
+          <ScalarProperty Name="Reverse_Transcription" ColumnName="Reverse_Transcription" />
+          <ScalarProperty Name="Melt_Curve" ColumnName="Melt_Curve" />
+          <ScalarProperty Name="Temperature_Dots" ColumnName="Temperature_Dots" />
+          <ScalarProperty Name="Slot_Count" ColumnName="Slot_Count" />
+          <ScalarProperty Name="RT_Enabled" ColumnName="RT_Enabled" />
+          <ScalarProperty Name="TC_Enabled" ColumnName="TC_Enabled" />
+          <ScalarProperty Name="MC_Enabled" ColumnName="MC_Enabled" />
+          <ScalarProperty Name="RT_EP" ColumnName="RT_EP" />
+          <ScalarProperty Name="Run_Initialize_Time" ColumnName="Run_Initialize_Time" />
+          <ScalarProperty Name="Param_ID" ColumnName="Param_ID" />
+          <ScalarProperty Name="Rar_File_Name" ColumnName="Rar_File_Name" />
+          <ScalarProperty Name="Cut_Left" ColumnName="Cut_Left" />
+          <ScalarProperty Name="Cut_Right" ColumnName="Cut_Right" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_OpEnvironment_Run_Log">
+      <EntityTypeMapping TypeName="GnexModel.TB_OpEnvironment_Run_Log">
+        <MappingFragment StoreEntitySet="TB_OpEnvironment_Run_Log">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OpEnvironment_ID" ColumnName="OpEnvironment_ID" />
+          <ScalarProperty Name="Votage_12V" ColumnName="Votage_12V" />
+          <ScalarProperty Name="Votage3_3V" ColumnName="Votage3_3V" />
+          <ScalarProperty Name="Votage_5V" ColumnName="Votage_5V" />
+          <ScalarProperty Name="Votage2_8V" ColumnName="Votage2_8V" />
+          <ScalarProperty Name="Votage2_5V" ColumnName="Votage2_5V" />
+          <ScalarProperty Name="Votage1_8V" ColumnName="Votage1_8V" />
+          <ScalarProperty Name="Motor_Votage" ColumnName="Motor_Votage" />
+          <ScalarProperty Name="Small_Fan_Temp_Sensor_Status" ColumnName="Small_Fan_Temp_Sensor_Status" />
+          <ScalarProperty Name="Small_Fan_Temp" ColumnName="Small_Fan_Temp" />
+          <ScalarProperty Name="Heater_Temp_Sensor_State" ColumnName="Heater_Temp_Sensor_State" />
+          <ScalarProperty Name="Heater_Temp" ColumnName="Heater_Temp" />
+          <ScalarProperty Name="Left_Slot_Temp_Sensor_Status" ColumnName="Left_Slot_Temp_Sensor_Status" />
+          <ScalarProperty Name="Left_Slot_Temp" ColumnName="Left_Slot_Temp" />
+          <ScalarProperty Name="Right_Slot_Temp_Sensor_Status" ColumnName="Right_Slot_Temp_Sensor_Status" />
+          <ScalarProperty Name="Right_Slot_Temp" ColumnName="Right_Slot_Temp" />
+          <ScalarProperty Name="Board_Temp_Sensor_Status" ColumnName="Board_Temp_Sensor_Status" />
+          <ScalarProperty Name="Board_Sensor_Temp" ColumnName="Board_Sensor_Temp" />
+          <ScalarProperty Name="Board_TM275_Temp" ColumnName="Board_TM275_Temp" />
+          <ScalarProperty Name="Camara_Status" ColumnName="Camara_Status" />
+          <ScalarProperty Name="Votage_2_6V" ColumnName="Votage_2_6V" />
+          <ScalarProperty Name="Votage_Vout" ColumnName="Votage_Vout" />
+          <ScalarProperty Name="Current_6_9" ColumnName="Current_6_9" />
+          <ScalarProperty Name="Votage_0_V" ColumnName="Votage_0_V" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_OpEnvironment_Temperature">
+      <EntityTypeMapping TypeName="GnexModel.TB_OpEnvironment_Temperature">
+        <MappingFragment StoreEntitySet="TB_OpEnvironment_Temperature">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OpEnvironment_Id" ColumnName="OpEnvironment_Id" />
+          <ScalarProperty Name="File_Path" ColumnName="File_Path" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Patient">
+      <EntityTypeMapping TypeName="GnexModel.TB_Patient">
+        <MappingFragment StoreEntitySet="TB_Patient">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Hospital_ID" ColumnName="Hospital_ID" />
+          <ScalarProperty Name="Experiment_ID" ColumnName="Experiment_ID" />
+          <ScalarProperty Name="Experiment_Rrsult_ID" ColumnName="Experiment_Rrsult_ID" />
+          <ScalarProperty Name="Patient_Name" ColumnName="Patient_Name" />
+          <ScalarProperty Name="Hospital_No" ColumnName="Hospital_No" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Operator_Name" ColumnName="Operator_Name" />
+          <ScalarProperty Name="Patient_Birth_Day" ColumnName="Patient_Birth_Day" />
+          <ScalarProperty Name="Patient_ID_No" ColumnName="Patient_ID_No" />
+          <ScalarProperty Name="Patient_Tel" ColumnName="Patient_Tel" />
+          <ScalarProperty Name="Hospital_Department" ColumnName="Hospital_Department" />
+          <ScalarProperty Name="Patient_Age" ColumnName="Patient_Age" />
+          <ScalarProperty Name="Run_Time" ColumnName="Run_Time" />
+          <ScalarProperty Name="Slot" ColumnName="Slot" />
+          <ScalarProperty Name="Gene_Locus_ID" ColumnName="Gene_Locus_ID" />
+          <ScalarProperty Name="Inspection_Unit" ColumnName="Inspection_Unit" />
+          <ScalarProperty Name="For_Drug" ColumnName="For_Drug" />
+          <ScalarProperty Name="Patient_Bar_Code" ColumnName="Patient_Bar_Code" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+          <ScalarProperty Name="Reported_Time" ColumnName="Reported_Time" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Sample_Gene">
+      <EntityTypeMapping TypeName="GnexModel.TB_Sample_Gene">
+        <MappingFragment StoreEntitySet="TB_Sample_Gene">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Staff_Name" ColumnName="Staff_Name" />
+          <ScalarProperty Name="Is_Effective" ColumnName="Is_Effective" />
+          <ScalarProperty Name="Gene_Locus_ID" ColumnName="Gene_Locus_ID" />
+          <ScalarProperty Name="Gene_Result_ID" ColumnName="Gene_Result_ID" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_SSIS_Errors">
+      <EntityTypeMapping TypeName="GnexModel.TB_SSIS_Errors">
+        <MappingFragment StoreEntitySet="TB_SSIS_Errors">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ErrorDateTime" ColumnName="ErrorDateTime" />
+          <ScalarProperty Name="ErrorDescription" ColumnName="ErrorDescription" />
+          <ScalarProperty Name="ErrorCode" ColumnName="ErrorCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_System_Param">
+      <EntityTypeMapping TypeName="GnexModel.TB_System_Param">
+        <MappingFragment StoreEntitySet="TB_System_Param">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Curve_Growth_Multiple" ColumnName="Curve_Growth_Multiple" />
+          <ScalarProperty Name="Growth_Cycles_Numbers" ColumnName="Growth_Cycles_Numbers" />
+          <ScalarProperty Name="CT_Range_Max" ColumnName="CT_Range_Max" />
+          <ScalarProperty Name="CT_Range_Min" ColumnName="CT_Range_Min" />
+          <ScalarProperty Name="Minimum_Normalized_Fluorescence" ColumnName="Minimum_Normalized_Fluorescence" />
+          <ScalarProperty Name="GR_Ration_Max" ColumnName="GR_Ration_Max" />
+          <ScalarProperty Name="GR_Ration_Min" ColumnName="GR_Ration_Min" />
+          <ScalarProperty Name="Rd" ColumnName="Rd" />
+          <ScalarProperty Name="Net_Of_Linear_Growth" ColumnName="Net_Of_Linear_Growth" />
+          <ScalarProperty Name="Is_Slot_Corrected" ColumnName="Is_Slot_Corrected" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Uploaded_Log">
+      <EntityTypeMapping TypeName="GnexModel.TB_Uploaded_Log">
+        <MappingFragment StoreEntitySet="TB_Uploaded_Log">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="File_Name" ColumnName="File_Name" />
+          <ScalarProperty Name="Equipment_Code" ColumnName="Equipment_Code" />
+          <ScalarProperty Name="Created_Time" ColumnName="Created_Time" />
+          <ScalarProperty Name="Updated_Time" ColumnName="Updated_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_USER">
+      <EntityTypeMapping TypeName="GnexModel.TB_USER">
+        <MappingFragment StoreEntitySet="TB_USER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="Nick_Name" ColumnName="Nick_Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
+          <ScalarProperty Name="Is_Effective" ColumnName="Is_Effective" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+          <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Experiment">
+      <EntityTypeMapping TypeName="GnexModel.TB_Experiment">
+        <MappingFragment StoreEntitySet="TB_Experiment">
+          <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+          <ScalarProperty Name="Add_Time" ColumnName="Add_Time" />
+          <ScalarProperty Name="Run_Time" ColumnName="Run_Time" />
+          <ScalarProperty Name="Is_Effective" ColumnName="Is_Effective" />
+          <ScalarProperty Name="File_Path_ID" ColumnName="File_Path_ID" />
+          <ScalarProperty Name="Exper_Type" ColumnName="Exper_Type" />
+          <ScalarProperty Name="Exper_Person" ColumnName="Exper_Person" />
+          <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
+          <ScalarProperty Name="Experiment_Summary_ID" ColumnName="Experiment_Summary_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

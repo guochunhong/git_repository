@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GnexModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TB_Uploaded_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="File_Name" Type="String" MaxLength="360" FixedLength="false" Unicode="true" />
+    <Property Name="Equipment_Code" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Created_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Updated_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="TB_Experiment" Relationship="GnexModel.FK_TB_Experiment_File_Path_ID" FromRole="TB_Uploaded_Log" ToRole="TB_Experiment" />
+  </EntityType>
+  <EntityContainer Name="GnexEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TB_Uploaded_Log" EntityType="Self.TB_Uploaded_Log" />
+    <EntitySet Name="TB_Experiment" EntityType="GnexModel.TB_Experiment" />
+    <AssociationSet Name="FK_TB_Experiment_File_Path_ID" Association="GnexModel.FK_TB_Experiment_File_Path_ID">
+      <End Role="TB_Uploaded_Log" EntitySet="TB_Uploaded_Log" />
+      <End Role="TB_Experiment" EntitySet="TB_Experiment" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TB_Experiment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Experiment_Summary_ID" Type="Int32" />
+    <Property Name="Equipment_ID" Type="Int32" />
+    <Property Name="Openvironment_ID" Type="Int32" />
+    <Property Name="Exper_Person" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Exper_Time" Type="DateTime" Precision="3" />
+    <Property Name="Exper_Type" Type="Int32" />
+    <Property Name="File_Path_ID" Type="Int64" />
+    <Property Name="Is_Effective" Type="Boolean" Nullable="false" />
+    <Property Name="Run_Time" Type="DateTime" Precision="3" />
+    <Property Name="Add_Time" Type="DateTime" Precision="3" />
+    <Property Name="Update_Time" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_Uploaded_Log" Relationship="GnexModel.FK_TB_Experiment_File_Path_ID" FromRole="TB_Experiment" ToRole="TB_Uploaded_Log" />
+  </EntityType>
+  <Association Name="FK_TB_Experiment_File_Path_ID">
+    <End Type="GnexModel.TB_Uploaded_Log" Role="TB_Uploaded_Log" Multiplicity="0..1" />
+    <End Type="GnexModel.TB_Experiment" Role="TB_Experiment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Uploaded_Log">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_Experiment">
+        <PropertyRef Name="File_Path_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
